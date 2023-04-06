@@ -18,6 +18,8 @@
 		33F9DF8329DD53A8007F3DCA /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8229DD53A8007F3DCA /* UsersPresenter.swift */; };
 		33F9DF8529DD53AF007F3DCA /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */; };
 		33F9DF8729DD53B4007F3DCA /* UsersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9DF8629DD53B4007F3DCA /* UsersTableViewController.xib */; };
+		33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */; };
+		33F9DF8C29DDC7AE007F3DCA /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */; };
 		BBA868A91303BA8CC1524749 /* Pods_PortfolioApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7343F71DE6A722E64DBFDE /* Pods_PortfolioApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		33F9DF8229DD53A8007F3DCA /* UsersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		33F9DF8629DD53B4007F3DCA /* UsersTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsersTableViewController.xib; sourceTree = "<group>"; };
+		33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		7F0A406A63E1CA6C4F23D192 /* Pods-PortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortfolioApp.release.xcconfig"; path = "Target Support Files/Pods-PortfolioApp/Pods-PortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
 		A1311AAD2A1C616C1BE46A8D /* Pods-PortfolioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortfolioApp.debug.xcconfig"; path = "Target Support Files/Pods-PortfolioApp/Pods-PortfolioApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FE7343F71DE6A722E64DBFDE /* Pods_PortfolioApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortfolioApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +67,7 @@
 		334F04C829DC955D00800A0C /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				33F9DF8829DDC766007F3DCA /* UsersCell */,
 				33F9DF8029DD539A007F3DCA /* UserComposer.swift */,
 				33F9DF8229DD53A8007F3DCA /* UsersPresenter.swift */,
 				33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */,
@@ -103,6 +108,15 @@
 				337499CD29D5D63200A7AA82 /* Info.plist */,
 			);
 			path = PortfolioApp;
+			sourceTree = "<group>";
+		};
+		33F9DF8829DDC766007F3DCA /* UsersCell */ = {
+			isa = PBXGroup;
+			children = (
+				33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */,
+				33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */,
+			);
+			path = UsersCell;
 			sourceTree = "<group>";
 		};
 		793712A8AC17B3650753E138 /* Pods */ = {
@@ -184,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F9DF8C29DDC7AE007F3DCA /* UsersTableViewCell.xib in Resources */,
 				337499CC29D5D63200A7AA82 /* LaunchScreen.storyboard in Resources */,
 				337499C929D5D63200A7AA82 /* Assets.xcassets in Resources */,
 				33F9DF8729DD53B4007F3DCA /* UsersTableViewController.xib in Resources */,
@@ -285,6 +300,7 @@
 				337499C229D5D63100A7AA82 /* SceneDelegate.swift in Sources */,
 				33F9DF8329DD53A8007F3DCA /* UsersPresenter.swift in Sources */,
 				33F9DF8129DD539A007F3DCA /* UserComposer.swift in Sources */,
+				33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */,
 				33F6D97829D6F3FA0059BAC0 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

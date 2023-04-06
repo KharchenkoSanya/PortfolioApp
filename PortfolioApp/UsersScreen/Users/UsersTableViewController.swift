@@ -1,6 +1,8 @@
 import UIKit
 
 final class UsersTableViewController: UITableViewController {
+    @IBOutlet private weak var usersTableView: UITableView!
+    
     var presenter = UsersPresenter()
     var models: [User] = []
     
@@ -11,7 +13,12 @@ final class UsersTableViewController: UITableViewController {
         tableView.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         title = "Users"
+        usersTableView.delegate = self
+        usersTableView.dataSource = self
+        usersTableView.register(UINib(nibName: "UsersTableViewCell", bundle: nil),
+                                forCellReuseIdentifier: "UsersTableViewCell")
         onRefresh()
+        
     }
     
     @objc
@@ -28,9 +35,9 @@ final class UsersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
         let user = models[indexPath.row]
-        cell.textLabel?.text = user.address.city
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UsersTableViewCell", for: indexPath) as!
+        UsersTableViewCell
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
