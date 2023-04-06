@@ -1,19 +1,19 @@
 import UIKit
 
 final class UsersTableViewCell: UITableViewCell {
-    @IBOutlet weak var mainNameLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var websiteLabel: UILabel!
-    @IBOutlet weak var companyLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var userNameInfoLabel: UILabel!
-    @IBOutlet weak var emailInfoLabel: UILabel!
-    @IBOutlet weak var phoneInfoLabel: UILabel!
-    @IBOutlet weak var websiteInfoLabel: UILabel!
-    @IBOutlet weak var companyInfoLabel: UILabel!
-    @IBOutlet weak var addressInfoLabel: UILabel!
+    @IBOutlet private weak var nameStatic: UILabel!
+    @IBOutlet private weak var userNameStatic: UILabel!
+    @IBOutlet private weak var emailStatic: UILabel!
+    @IBOutlet private weak var phoneStatic: UILabel!
+    @IBOutlet private weak var websiteStatic: UILabel!
+    @IBOutlet private weak var companyStatic: UILabel!
+    @IBOutlet private weak var addressStatic: UILabel!
+    @IBOutlet private weak var userNameValue: UILabel!
+    @IBOutlet private weak var emailValue: UILabel!
+    @IBOutlet private weak var phoneValue: UILabel!
+    @IBOutlet private weak var websiteValue: UILabel!
+    @IBOutlet private weak var companyValue: UILabel!
+    @IBOutlet private weak var addressValue: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +21,8 @@ final class UsersTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setup(user: User) {
     }
 }

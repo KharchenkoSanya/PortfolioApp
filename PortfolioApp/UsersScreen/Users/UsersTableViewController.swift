@@ -10,6 +10,8 @@ final class UsersTableViewController: UITableViewController {
         super.viewDidLoad()
         presenter.view = self
         tableView.refreshControl = UIRefreshControl()
+        tableView.estimatedRowHeight = 175
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         title = "Users"
