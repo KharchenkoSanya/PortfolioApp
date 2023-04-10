@@ -13,7 +13,6 @@
 		337499C429D5D63100A7AA82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337499C329D5D63100A7AA82 /* ViewController.swift */; };
 		337499C929D5D63200A7AA82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337499C829D5D63200A7AA82 /* Assets.xcassets */; };
 		337499CC29D5D63200A7AA82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 337499CA29D5D63200A7AA82 /* LaunchScreen.storyboard */; };
-		33DBC9B329E2D147004052E4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DBC9B229E2D147004052E4 /* R.generated.swift */; };
 		33DBC9B529E2D193004052E4 /* R.Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DBC9B429E2D193004052E4 /* R.Aliases.swift */; };
 		33DBC9BA29E2DE33004052E4 /* Texts.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33DBC9BC29E2DE33004052E4 /* Texts.strings */; };
 		33F9DF8129DD539A007F3DCA /* UserComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8029DD539A007F3DCA /* UserComposer.swift */; };
@@ -22,6 +21,7 @@
 		33F9DF8729DD53B4007F3DCA /* UsersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9DF8629DD53B4007F3DCA /* UsersTableViewController.xib */; };
 		33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */; };
 		33F9DF8C29DDC7AE007F3DCA /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */; };
+		8D090CD229E3FF9400DEFC59 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D090CD129E3FF9400DEFC59 /* R.generated.swift */; };
 		BBA868A91303BA8CC1524749 /* Pods_PortfolioApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7343F71DE6A722E64DBFDE /* Pods_PortfolioApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,6 @@
 		337499C829D5D63200A7AA82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		337499CB29D5D63200A7AA82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		337499CD29D5D63200A7AA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33DBC9B229E2D147004052E4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		33DBC9B429E2D193004052E4 /* R.Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.Aliases.swift; sourceTree = "<group>"; };
 		33DBC9BB29E2DE33004052E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Texts.strings; sourceTree = "<group>"; };
 		33F9DF8029DD539A007F3DCA /* UserComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComposer.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		7F0A406A63E1CA6C4F23D192 /* Pods-PortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortfolioApp.release.xcconfig"; path = "Target Support Files/Pods-PortfolioApp/Pods-PortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
+		8D090CD129E3FF9400DEFC59 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		A1311AAD2A1C616C1BE46A8D /* Pods-PortfolioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortfolioApp.debug.xcconfig"; path = "Target Support Files/Pods-PortfolioApp/Pods-PortfolioApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FE7343F71DE6A722E64DBFDE /* Pods_PortfolioApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortfolioApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,8 +109,8 @@
 				337499C829D5D63200A7AA82 /* Assets.xcassets */,
 				337499CA29D5D63200A7AA82 /* LaunchScreen.storyboard */,
 				337499CD29D5D63200A7AA82 /* Info.plist */,
-				33DBC9B229E2D147004052E4 /* R.generated.swift */,
 				33DBC9B429E2D193004052E4 /* R.Aliases.swift */,
+				8D090CD129E3FF9400DEFC59 /* R.generated.swift */,
 				33DBC9BC29E2DE33004052E4 /* Texts.strings */,
 			);
 			path = PortfolioApp;
@@ -307,7 +307,7 @@
 				337499C229D5D63100A7AA82 /* SceneDelegate.swift in Sources */,
 				33F9DF8329DD53A8007F3DCA /* UsersPresenter.swift in Sources */,
 				33F9DF8129DD539A007F3DCA /* UserComposer.swift in Sources */,
-				33DBC9B329E2D147004052E4 /* R.generated.swift in Sources */,
+				8D090CD229E3FF9400DEFC59 /* R.generated.swift in Sources */,
 				33DBC9B529E2D193004052E4 /* R.Aliases.swift in Sources */,
 				33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */,
 			);
