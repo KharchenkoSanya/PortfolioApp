@@ -40,6 +40,7 @@ final class UsersTableViewController: UITableViewController {
         let user = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "UsersTableViewCell", for: indexPath) as!
         UsersTableViewCell
+        cell.setup(user: user)
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

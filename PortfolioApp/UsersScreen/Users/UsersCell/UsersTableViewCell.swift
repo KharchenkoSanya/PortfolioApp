@@ -1,7 +1,7 @@
 import UIKit
 
 final class UsersTableViewCell: UITableViewCell {
-    @IBOutlet private weak var nameStatic: UILabel!
+    @IBOutlet private weak var nameTitle: UILabel!
     @IBOutlet private weak var userNameStatic: UILabel!
     @IBOutlet private weak var emailStatic: UILabel!
     @IBOutlet private weak var phoneStatic: UILabel!
@@ -18,11 +18,19 @@ final class UsersTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
     func setup(user: User) {
+        userNameStatic.text = "username"
+        nameTitle.text = user.name
+        userNameValue.text = user.username
+        emailValue.text = user.email
+        phoneValue.text = user.phone
+        websiteValue.text = user.website
+        companyValue.text = user.name
+        addressValue.text = "\(user.address.city), \(user.address.street), \(user.address.suite), \(user.address.zipcode),"
     }
 }
