@@ -41,6 +41,7 @@ final class UsersTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let user = models[indexPath.row]
         presenter.onSelect(user)
     }
