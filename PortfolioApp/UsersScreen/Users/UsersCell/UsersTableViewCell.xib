@@ -140,7 +140,7 @@
                 <outlet property="websiteStatic" destination="iPl-m7-dQd" id="qof-hn-CIw"/>
                 <outlet property="websiteValue" destination="8VT-ss-hW3" id="Owx-84-YaA"/>
             </connections>
-            <point key="canvasLocation" x="78" y="8"/>
+            <point key="canvasLocation" x="-79" y="89"/>
         </tableViewCell>
     </objects>
 </document>
