@@ -1,1 +1,7 @@
-"User.userNameStatic" = "username";
+"User.title" = "Users";
+"User.userNameStatic" = "Username";
+"User.emailStatic" = "Email";
+"User.phoneStatic" = "Phone";
+"User.websiteStatic" = "Website";
+"User.companyStatic" = "Company";
+"User.addressStatic" = "Address";

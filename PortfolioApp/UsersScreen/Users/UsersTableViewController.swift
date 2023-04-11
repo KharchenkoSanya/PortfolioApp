@@ -2,7 +2,6 @@ import UIKit
 
 final class UsersTableViewController: UITableViewController {
     @IBOutlet private weak var usersTableView: UITableView!
-    
     var presenter = UsersPresenter()
     var models: [User] = []
     
@@ -13,12 +12,11 @@ final class UsersTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 175
         tableView.rowHeight = UITableView.automaticDimension
         tableView.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-        title = "Users"
+        tableView.register(R.nib.usersTableViewCell)
+        title = R.string.texts.userTitle()
         usersTableView.delegate = self
         usersTableView.dataSource = self
-        usersTableView.register(UINib(nibName: "UsersTableViewCell", bundle: nil),
-                                forCellReuseIdentifier: "UsersTableViewCell")
+        usersTableView.register(R.nib.usersTableViewCell)
         onRefresh()
         
     }
@@ -38,8 +36,7 @@ final class UsersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = models[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UsersTableViewCell", for: indexPath) as!
-        UsersTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.usersTableViewCell, for: indexPath)!
         cell.setup(user: user)
         return cell
     }

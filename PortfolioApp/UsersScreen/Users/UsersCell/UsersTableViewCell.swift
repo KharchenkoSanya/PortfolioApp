@@ -1,7 +1,10 @@
 import UIKit
+import RswiftResources
 
-final class UsersTableViewCell: UITableViewCell {
-    @IBOutlet private weak var nameTitle: UILabel!
+final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
+    public typealias ReusableType = UsersTableViewCell
+    
+    @IBOutlet private weak var nameTitleValue: UILabel!
     @IBOutlet private weak var userNameStatic: UILabel!
     @IBOutlet private weak var emailStatic: UILabel!
     @IBOutlet private weak var phoneStatic: UILabel!
@@ -24,13 +27,24 @@ final class UsersTableViewCell: UITableViewCell {
     }
     
     func setup(user: User) {
-        userNameStatic.text = "username"
-        nameTitle.text = user.name
+        userNameStatic.text = R.string.texts.userUserNameStatic()
+        emailStatic.text = R.string.texts.userEmailStatic()
+        phoneStatic.text = R.string.texts.userPhoneStatic()
+        websiteStatic.text = R.string.texts.userWebsiteStatic()
+        companyStatic.text = R.string.texts.userCompanyStatic()
+        addressStatic.text = R.string.texts.userAddressStatic()
+        nameTitleValue.text = user.name
         userNameValue.text = user.username
         emailValue.text = user.email
         phoneValue.text = user.phone
         websiteValue.text = user.website
         companyValue.text = user.name
         addressValue.text = "\(user.address.city), \(user.address.street), \(user.address.suite), \(user.address.zipcode),"
+    }
+}
+
+extension UITableViewCell {
+    public var identifier: String {
+        return String(describing: self)
     }
 }
