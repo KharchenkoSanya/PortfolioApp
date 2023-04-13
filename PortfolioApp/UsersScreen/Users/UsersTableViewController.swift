@@ -18,7 +18,6 @@ final class UsersTableViewController: UITableViewController {
         usersTableView.dataSource = self
         usersTableView.register(R.nib.usersTableViewCell)
         onRefresh()
-        
     }
     
     @objc
