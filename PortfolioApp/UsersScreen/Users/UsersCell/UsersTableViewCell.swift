@@ -3,7 +3,6 @@ import RswiftResources
 
 final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     public typealias ReusableType = UsersTableViewCell
-    
     @IBOutlet private weak var nameTitleValue: UILabel!
     @IBOutlet private weak var userNameStatic: UILabel!
     @IBOutlet private weak var emailStatic: UILabel!

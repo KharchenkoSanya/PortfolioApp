@@ -1,6 +1,7 @@
 import UIKit
 
 final class UsersTableViewController: UITableViewController {
+    public typealias ReusableType = UsersTableViewController
     @IBOutlet private weak var usersTableView: UITableView!
     var presenter = UsersPresenter()
     var models: [User] = []
@@ -39,6 +40,7 @@ final class UsersTableViewController: UITableViewController {
         cell.setup(user: user)
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = models[indexPath.row]
@@ -59,5 +61,11 @@ extension UsersTableViewController: UsersView {
         } else {
             tableView.refreshControl?.endRefreshing()
         }
+    }
+}
+
+extension UITableViewController {
+    public var identifier: String {
+        return String(describing: self)
     }
 }
