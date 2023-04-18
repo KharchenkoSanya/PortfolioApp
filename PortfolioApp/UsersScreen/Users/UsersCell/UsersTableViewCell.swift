@@ -41,9 +41,3 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         addressValue.text = "\(user.address.city), \(user.address.street), \(user.address.suite), \(user.address.zipcode),"
     }
 }
-
-extension UITableViewCell {
-    public var identifier: String {
-        return String(describing: self)
-    }
-}
