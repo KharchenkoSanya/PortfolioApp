@@ -33,7 +33,7 @@ opt_in_rules:
 excluded:
   - Carthage
   - Pods
-  - R.generated.swift
+  - PortfolioApp/R.generated.swift
 identifier_name:
   excluded:
     - id
