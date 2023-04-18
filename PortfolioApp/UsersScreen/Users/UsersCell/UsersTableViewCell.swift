@@ -27,10 +27,6 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         addressStatic.text = R.string.texts.userAddressStatic()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func setup(user: User) {
         nameTitleValue.text = user.name
         userNameValue.text = user.username

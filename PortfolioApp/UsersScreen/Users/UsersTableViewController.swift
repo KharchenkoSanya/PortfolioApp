@@ -1,9 +1,8 @@
 import UIKit
 
 final class UsersTableViewController: UITableViewController {
-    @IBOutlet private weak var usersTableView: UITableView!
     var presenter: UsersPresenter!
-    var models: [User] = []
+    private var models: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ final class UsersTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         title = R.string.texts.userTitle()
         tableView.refreshControl = UIRefreshControl()
         tableView.estimatedRowHeight = 175
