@@ -22,7 +22,7 @@ final class UsersTableViewController: UITableViewController {
     }
     
     @objc
-    func onRefresh() {
+    private func onRefresh() {
         presenter.onRefresh()
     }
     
