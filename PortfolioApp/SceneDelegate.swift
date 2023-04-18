@@ -8,8 +8,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let mainVC = UsersTableViewController()
-        let navigationVC = UINavigationController(rootViewController: mainVC)
+        let navigationVC = UINavigationController(rootViewController: UserComposer.build())
         window.rootViewController = navigationVC
         self.window = window
         window.makeKeyAndVisible()

@@ -2,7 +2,7 @@ import UIKit
 
 final class UsersTableViewController: UITableViewController {
     @IBOutlet private weak var usersTableView: UITableView!
-    var presenter = UsersPresenter()
+    var presenter: UsersPresenter!
     var models: [User] = []
     
     override func viewDidLoad() {
@@ -32,7 +32,6 @@ final class UsersTableViewController: UITableViewController {
     }
     
     func configureTableView() {
-        presenter.view = self
         title = R.string.texts.userTitle()
         tableView.refreshControl = UIRefreshControl()
         tableView.estimatedRowHeight = 175
