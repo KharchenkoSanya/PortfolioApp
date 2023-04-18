@@ -1,7 +1,7 @@
 import UIKit
 
 final class UsersTableViewController: UITableViewController {
-    public typealias ReusableType = UsersTableViewController
+//    public typealias ReusableType = UsersTableViewController
     @IBOutlet private weak var usersTableView: UITableView!
     var presenter = UsersPresenter()
     var models: [User] = []
@@ -40,9 +40,6 @@ final class UsersTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         tableView.register(R.nib.usersTableViewCell)
-        usersTableView.delegate = self
-        usersTableView.dataSource = self
-        usersTableView.register(R.nib.usersTableViewCell)
     }
 }
 

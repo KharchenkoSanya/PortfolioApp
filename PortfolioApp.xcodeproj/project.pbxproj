@@ -21,7 +21,6 @@
 		33F9DF8129DD539A007F3DCA /* UserComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8029DD539A007F3DCA /* UserComposer.swift */; };
 		33F9DF8329DD53A8007F3DCA /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8229DD53A8007F3DCA /* UsersPresenter.swift */; };
 		33F9DF8529DD53AF007F3DCA /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */; };
-		33F9DF8729DD53B4007F3DCA /* UsersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9DF8629DD53B4007F3DCA /* UsersTableViewController.xib */; };
 		33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */; };
 		33F9DF8C29DDC7AE007F3DCA /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */; };
 		BBA868A91303BA8CC1524749 /* Pods_PortfolioApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7343F71DE6A722E64DBFDE /* Pods_PortfolioApp.framework */; };
@@ -46,7 +45,6 @@
 		33F9DF8029DD539A007F3DCA /* UserComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComposer.swift; sourceTree = "<group>"; };
 		33F9DF8229DD53A8007F3DCA /* UsersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
-		33F9DF8629DD53B4007F3DCA /* UsersTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsersTableViewController.xib; sourceTree = "<group>"; };
 		33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		7F0A406A63E1CA6C4F23D192 /* Pods-PortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortfolioApp.release.xcconfig"; path = "Target Support Files/Pods-PortfolioApp/Pods-PortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				33F9DF8029DD539A007F3DCA /* UserComposer.swift */,
 				33F9DF8229DD53A8007F3DCA /* UsersPresenter.swift */,
 				33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */,
-				33F9DF8629DD53B4007F3DCA /* UsersTableViewController.xib */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -241,7 +238,6 @@
 				337499CC29D5D63200A7AA82 /* LaunchScreen.storyboard in Resources */,
 				33DBC9BA29E2DE33004052E4 /* Texts.strings in Resources */,
 				337499C929D5D63200A7AA82 /* Assets.xcassets in Resources */,
-				33F9DF8729DD53B4007F3DCA /* UsersTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
