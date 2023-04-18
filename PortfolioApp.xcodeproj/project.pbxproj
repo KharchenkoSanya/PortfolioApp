@@ -67,22 +67,13 @@
 		334F04C729DC951200800A0C /* UsersScreen */ = {
 			isa = PBXGroup;
 			children = (
-				33BF038D29EE888E00C797C0 /* Models */,
-				334F04C829DC955D00800A0C /* Users */,
-			);
-			path = UsersScreen;
-			sourceTree = "<group>";
-		};
-		334F04C829DC955D00800A0C /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */,
-				33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */,
+				33BF038E29EE88D300C797C0 /* UsersModels */,
+				33BF039729EEC6B800C797C0 /* UsersTableViewCell */,
 				33F9DF8029DD539A007F3DCA /* UserComposer.swift */,
 				33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */,
 				33F9DF8229DD53A8007F3DCA /* UsersPresenter.swift */,
 			);
-			path = Users;
+			path = UsersScreen;
 			sourceTree = "<group>";
 		};
 		337499B329D5D63100A7AA82 = {
@@ -128,14 +119,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		33BF038D29EE888E00C797C0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				33BF038E29EE88D300C797C0 /* UsersModels */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		33BF038E29EE88D300C797C0 /* UsersModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +127,15 @@
 				33BF039129EE894400C797C0 /* Company.swift */,
 			);
 			path = UsersModels;
+			sourceTree = "<group>";
+		};
+		33BF039729EEC6B800C797C0 /* UsersTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */,
+				33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */,
+			);
+			path = UsersTableViewCell;
 			sourceTree = "<group>";
 		};
 		793712A8AC17B3650753E138 /* Pods */ = {
