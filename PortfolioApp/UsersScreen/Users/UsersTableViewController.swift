@@ -1,7 +1,6 @@
 import UIKit
 
 final class UsersTableViewController: UITableViewController {
-//    public typealias ReusableType = UsersTableViewController
     @IBOutlet private weak var usersTableView: UITableView!
     var presenter = UsersPresenter()
     var models: [User] = []
@@ -56,11 +55,5 @@ extension UsersTableViewController: UsersView {
         } else {
             tableView.refreshControl?.endRefreshing()
         }
-    }
-}
-
-extension UITableViewController {
-    public var identifier: String {
-        return String(describing: self)
     }
 }
