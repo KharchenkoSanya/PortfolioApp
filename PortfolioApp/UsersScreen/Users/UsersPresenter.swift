@@ -30,7 +30,4 @@ final class UsersPresenter {
         }
         task.resume()
     }
-    func onSelect(_ user: User) {
-        print("SELECTED \(user)")
-    }
 }
