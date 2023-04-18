@@ -38,6 +38,9 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         phoneValue.text = user.phone
         websiteValue.text = user.website
         companyValue.text = user.name
-        addressValue.text = "\(user.address.city), \(user.address.street), \(user.address.suite), \(user.address.zipcode),"
+        addressValue.text = [user.address.city,
+                             user.address.street,
+                             user.address.suite,
+                             user.address.zipcode].joined(separator: ", ")
     }
 }
