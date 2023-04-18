@@ -19,6 +19,12 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        userNameStatic.text = R.string.texts.userUserNameStatic()
+        emailStatic.text = R.string.texts.userEmailStatic()
+        phoneStatic.text = R.string.texts.userPhoneStatic()
+        websiteStatic.text = R.string.texts.userWebsiteStatic()
+        companyStatic.text = R.string.texts.userCompanyStatic()
+        addressStatic.text = R.string.texts.userAddressStatic()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,12 +32,6 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     }
     
     func setup(user: User) {
-        userNameStatic.text = R.string.texts.userUserNameStatic()
-        emailStatic.text = R.string.texts.userEmailStatic()
-        phoneStatic.text = R.string.texts.userPhoneStatic()
-        websiteStatic.text = R.string.texts.userWebsiteStatic()
-        companyStatic.text = R.string.texts.userCompanyStatic()
-        addressStatic.text = R.string.texts.userAddressStatic()
         nameTitleValue.text = user.name
         userNameValue.text = user.username
         emailValue.text = user.email
