@@ -1,5 +1,5 @@
 import Foundation
 
-struct Company: Decodable {
+struct CompanyData: Decodable {
     let name: String
 }

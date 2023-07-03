@@ -1,8 +1,8 @@
 import UIKit
 
-final class UsersTableViewController: UITableViewController {
-    var presenter: UsersPresenter!
-    private var models: [User] = []
+final class MainViewController: UITableViewController {
+    var presenter: MainViewModel!
+    private var models: [UserData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,7 +11,7 @@ final class UsersTableViewController: UITableViewController {
     }
     
     @objc
-    private func onRefresh() {
+    internal func onRefresh() {
         presenter.onRefresh()
     }
     
@@ -45,9 +45,9 @@ final class UsersTableViewController: UITableViewController {
     }
 }
 
-extension UsersTableViewController: UsersView {
+extension MainViewController: UsersViewProtocol {
     
-    func display(_ users: [User]) {
+    func display(_ users: [UserData]) {
         models = users
         tableView.reloadData()
     }

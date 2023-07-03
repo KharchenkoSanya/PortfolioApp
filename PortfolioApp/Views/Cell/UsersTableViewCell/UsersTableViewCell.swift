@@ -27,7 +27,7 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         addressStatic.text = R.string.texts.userAddressStatic()
     }
     
-    func setup(user: User) {
+    func setup(user: UserData) {
         nameTitleValue.text = user.name
         userNameValue.text = user.username
         emailValue.text = user.email

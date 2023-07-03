@@ -1,12 +1,18 @@
 import Foundation
 
-protocol UsersView: AnyObject {
-    func display(_ users: [User])
+protocol UsersViewProtocol: AnyObject {
+    func display(_ users: [UserData])
     func display(isLoading: Bool)
 }
 
-final class UsersPresenter {
-    weak var view: UsersView?
+final class MainViewModel {
+        var viewData: (([UserData]) -> Void)?
+    
+        init() {
+            viewData?(.init())
+        }
+    
+    weak var view: UsersViewProtocol?
     
     func onRefresh() {
         view?.display(isLoading: true)
@@ -17,7 +23,7 @@ final class UsersPresenter {
             guard let data = data else { return }
             
             do {
-                let result = try JSONDecoder().decode([User].self, from: data)
+                let result = try JSONDecoder().decode([UserData].self, from: data)
                 DispatchQueue.main.async {
                     self.view?.display(result)
                     self.view?.display(isLoading: false)
