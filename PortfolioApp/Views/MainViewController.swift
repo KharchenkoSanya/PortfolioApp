@@ -1,7 +1,7 @@
 import UIKit
 
 final class MainViewController: UITableViewController {
-    var presenter: MainViewModel!
+    var viewModel: MainViewModel!
     private var models: [UserData] = []
     
     override func viewDidLoad() {
@@ -12,7 +12,7 @@ final class MainViewController: UITableViewController {
     
     @objc
     internal func onRefresh() {
-        presenter.onRefresh()
+        viewModel.onRefresh()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

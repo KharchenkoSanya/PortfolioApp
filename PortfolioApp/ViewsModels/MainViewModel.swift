@@ -6,12 +6,7 @@ protocol UsersViewProtocol: AnyObject {
 }
 
 final class MainViewModel {
-        var viewData: (([UserData]) -> Void)?
-    
-        init() {
-            viewData?(.init())
-        }
-    
+       
     weak var view: UsersViewProtocol?
     
     func onRefresh() {

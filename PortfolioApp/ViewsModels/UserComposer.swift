@@ -5,10 +5,10 @@ final class UserComposer {
     private init() {}
     
     static func build() -> UIViewController {
-        let presenter = MainViewModel()
-        let usersVC = MainViewController()
-        usersVC.presenter = presenter
-        presenter.view = usersVC
-        return usersVC
+        let viewModel = MainViewModel()
+        let usersMainVC = MainViewController()
+        usersMainVC.viewModel = viewModel
+        viewModel.view = usersMainVC
+        return usersMainVC
     }
 }
