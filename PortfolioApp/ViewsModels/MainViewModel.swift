@@ -9,7 +9,6 @@ final class MainViewModel {
        
     var viewData: (([UserData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
-    var didSelectUser: ((UserData) -> Void)?
     
     init() {
         viewData?([])

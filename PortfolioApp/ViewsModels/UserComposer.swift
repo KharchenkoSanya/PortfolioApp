@@ -8,7 +8,6 @@ final class UserComposer {
         let viewModel = MainViewModel()
         let usersMainVC = MainViewController()
         usersMainVC.onRefresh = viewModel.onRefresh
-        usersMainVC.didSelectUser = viewModel.didSelectUser
         viewModel.viewData = usersMainVC.display
         viewModel.isLoadingData = usersMainVC.display
         return usersMainVC

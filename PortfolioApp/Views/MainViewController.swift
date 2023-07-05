@@ -4,7 +4,6 @@ final class MainViewController: UITableViewController {
     
     private var models: [UserData] = []
     var onRefresh: (() -> Void)?
-    var didSelectUser: ((UserData) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,6 @@ final class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = models[indexPath.row]
-        didSelectUser?(user)
     }
     
     private func configureTableView() {
