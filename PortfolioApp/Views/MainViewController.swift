@@ -1,18 +1,20 @@
 import UIKit
 
 final class MainViewController: UITableViewController {
-    var viewModel: MainViewModel!
+    
     private var models: [UserData] = []
+    var onRefresh: (() -> Void)?
+    var didSelectUser: ((UserData) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        onRefresh()
+        onRefresh?()
     }
     
     @objc
-    internal func onRefresh() {
-        viewModel.onRefresh()
+    internal func refreshAction() {
+        onRefresh?()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,6 +35,7 @@ final class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = models[indexPath.row]
+        didSelectUser?(user)
     }
     
     private func configureTableView() {
@@ -40,7 +43,7 @@ final class MainViewController: UITableViewController {
         tableView.refreshControl = UIRefreshControl()
         tableView.estimatedRowHeight = 175
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
         tableView.register(R.nib.usersTableViewCell)
     }
 }

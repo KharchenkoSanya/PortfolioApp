@@ -7,8 +7,10 @@ final class UserComposer {
     static func build() -> UIViewController {
         let viewModel = MainViewModel()
         let usersMainVC = MainViewController()
-        usersMainVC.viewModel = viewModel
-        viewModel.view = usersMainVC
+        usersMainVC.onRefresh = viewModel.onRefresh
+        usersMainVC.didSelectUser = viewModel.didSelectUser
+        viewModel.viewData = usersMainVC.display
+        viewModel.isLoadingData = usersMainVC.display
         return usersMainVC
     }
 }

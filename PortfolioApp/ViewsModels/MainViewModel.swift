@@ -7,10 +7,16 @@ protocol UsersViewProtocol: AnyObject {
 
 final class MainViewModel {
        
-    weak var view: UsersViewProtocol?
+    var viewData: (([UserData]) -> Void)?
+    var isLoadingData: ((Bool) -> Void)?
+    var didSelectUser: ((UserData) -> Void)?
+    
+    init() {
+        viewData?([])
+    }
     
     func onRefresh() {
-        view?.display(isLoading: true)
+        isLoadingData?(true)
         var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/users")!)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
@@ -20,12 +26,12 @@ final class MainViewModel {
             do {
                 let result = try JSONDecoder().decode([UserData].self, from: data)
                 DispatchQueue.main.async {
-                    self.view?.display(result)
-                    self.view?.display(isLoading: false)
+                    self.viewData?(result)
+                    self.isLoadingData?(false)
                 }
             } catch {
                 DispatchQueue.main.async {
-                    self.view?.display(isLoading: false)
+                    self.isLoadingData?(false)
                 }
             }
         }
