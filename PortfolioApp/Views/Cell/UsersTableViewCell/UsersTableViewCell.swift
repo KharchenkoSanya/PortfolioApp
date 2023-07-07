@@ -17,6 +17,10 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     @IBOutlet private weak var companyValue: UILabel!
     @IBOutlet private weak var addressValue: UILabel!
     
+    @IBOutlet weak var postsButton: UIButton!
+    @IBOutlet weak var photosButton: UIButton!
+    @IBOutlet weak var albumButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         userNameStatic.text = R.string.texts.userUserNameStatic()
@@ -38,5 +42,9 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
                              user.address.street,
                              user.address.suite,
                              user.address.zipcode].joined(separator: ", ")
+    }
+    
+    func setup(post: PostsData) {
+//        postsButton.
     }
 }

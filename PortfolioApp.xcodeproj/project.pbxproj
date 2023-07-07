@@ -13,6 +13,8 @@
 		337499C229D5D63100A7AA82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337499C129D5D63100A7AA82 /* SceneDelegate.swift */; };
 		337499C929D5D63200A7AA82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337499C829D5D63200A7AA82 /* Assets.xcassets */; };
 		337499CC29D5D63200A7AA82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 337499CA29D5D63200A7AA82 /* LaunchScreen.storyboard */; };
+		337930952A584E2B002F7537 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337930942A584E2B002F7537 /* PostsViewController.swift */; };
+		337930982A585618002F7537 /* PostsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337930972A585618002F7537 /* PostsData.swift */; };
 		33BF038C29EE848D00C797C0 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF038B29EE848D00C797C0 /* UITableViewCell+Extensions.swift */; };
 		33BF039029EE890A00C797C0 /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF038F29EE890A00C797C0 /* AddressData.swift */; };
 		33BF039229EE894400C797C0 /* CompanyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF039129EE894400C797C0 /* CompanyData.swift */; };
@@ -37,6 +39,8 @@
 		337499C829D5D63200A7AA82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		337499CB29D5D63200A7AA82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		337499CD29D5D63200A7AA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		337930942A584E2B002F7537 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		337930972A585618002F7537 /* PostsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsData.swift; sourceTree = "<group>"; };
 		33BF038B29EE848D00C797C0 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		33BF038F29EE890A00C797C0 /* AddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressData.swift; sourceTree = "<group>"; };
 		33BF039129EE894400C797C0 /* CompanyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyData.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				33F9DF8429DD53AF007F3DCA /* MainViewController.swift */,
+				337930942A584E2B002F7537 /* PostsViewController.swift */,
 				33529DD52A52C6B7007224FD /* Cell */,
 			);
 			path = Views;
@@ -93,6 +98,7 @@
 		33529DD72A52C72C007224FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				337930962A585570002F7537 /* PostsModels */,
 				33BF038E29EE88D300C797C0 /* UsersModels */,
 			);
 			path = Models;
@@ -133,6 +139,14 @@
 				33DBC9BC29E2DE33004052E4 /* Texts.strings */,
 			);
 			path = PortfolioApp;
+			sourceTree = "<group>";
+		};
+		337930962A585570002F7537 /* PostsModels */ = {
+			isa = PBXGroup;
+			children = (
+				337930972A585618002F7537 /* PostsData.swift */,
+			);
+			path = PostsModels;
 			sourceTree = "<group>";
 		};
 		33BF038A29EE845A00C797C0 /* Extensions */ = {
@@ -344,11 +358,13 @@
 				337499C229D5D63100A7AA82 /* SceneDelegate.swift in Sources */,
 				33F9DF8329DD53A8007F3DCA /* MainViewModel.swift in Sources */,
 				33F9DF8129DD539A007F3DCA /* UserComposer.swift in Sources */,
+				337930952A584E2B002F7537 /* PostsViewController.swift in Sources */,
 				334C8D9129E585E6006AA5BF /* R.generated.swift in Sources */,
 				33DBC9B529E2D193004052E4 /* R.Aliases.swift in Sources */,
 				33BF039029EE890A00C797C0 /* AddressData.swift in Sources */,
 				33BF038C29EE848D00C797C0 /* UITableViewCell+Extensions.swift in Sources */,
 				33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */,
+				337930982A585618002F7537 /* PostsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
