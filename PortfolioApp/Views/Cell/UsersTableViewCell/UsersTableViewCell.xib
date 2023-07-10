@@ -126,6 +126,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Posts"/>
+                                <connections>
+                                    <action selector="postsButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7YC-kG-QHH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uw9-YI-ySS">
                                 <rect key="frame" x="106.66666666666666" y="0.0" width="106.66666666666666" height="40"/>
@@ -172,8 +175,6 @@
                 <outlet property="nameTitleValue" destination="hMq-ag-JhS" id="q5V-lQ-Aoe"/>
                 <outlet property="phoneStatic" destination="oHp-9g-Hjx" id="ch7-wE-aTN"/>
                 <outlet property="phoneValue" destination="oH2-bR-LxC" id="Rqr-6g-aJ7"/>
-                <outlet property="photosButton" destination="uw9-YI-ySS" id="mry-nh-OXL"/>
-                <outlet property="postsButton" destination="kfv-xG-vGD" id="ic8-r6-M4b"/>
                 <outlet property="userNameStatic" destination="e8V-QJ-uVn" id="SZK-3u-OZF"/>
                 <outlet property="userNameValue" destination="hiu-PL-cBA" id="pzI-ht-ceM"/>
                 <outlet property="websiteStatic" destination="iPl-m7-dQd" id="qof-hn-CIw"/>

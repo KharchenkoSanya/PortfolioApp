@@ -34,6 +34,8 @@ final class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = models[indexPath.row]
+//        let controller = PostsTableViewController()
+//        navigationController?.pushViewController(controller, animated: true)
     }
     
     private func configureTableView() {
