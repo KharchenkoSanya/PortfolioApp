@@ -30,7 +30,7 @@ final class MainViewController: UITableViewController {
         cell.setup(user: user)
         cell.onPostButtonTap = { [weak self] in
             guard let self else { return }
-            let controller = PostComposer.build()
+            let controller = PostComposer.build(postID: user.id)
             self.navigationController?.pushViewController(controller, animated: true)
         }
         return cell

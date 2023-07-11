@@ -4,9 +4,9 @@ final class PostComposer {
     
     private init() {}
     
-    static func build() -> UIViewController {
-        let postsViewModel = PostsViewModel()
-        let postsTableViewController = PostsTableViewController()
+    static func build(postID: Int) -> UIViewController {
+        let postsViewModel = PostsViewModel(postID: String(postID))
+        let postsTableViewController = PostsTableViewController(viewModel: postsViewModel)
         return postsTableViewController
     }
 }
