@@ -32,7 +32,6 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
 
     @IBAction func postsButton(_ sender: Any) {
         onPostButtonTap?()
-        
     }
     
     func setup(user: UserData) {
