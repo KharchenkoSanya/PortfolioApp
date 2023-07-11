@@ -28,14 +28,17 @@ final class MainViewController: UITableViewController {
         let user = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.usersTableViewCell, for: indexPath)!
         cell.setup(user: user)
+        cell.onPostButtonTap = { [weak self] in
+            guard let self else { return }
+            let controller = PostComposer.build()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let user = models[indexPath.row]
-//        let controller = PostsTableViewController()
-//        navigationController?.pushViewController(controller, animated: true)
     }
     
     private func configureTableView() {

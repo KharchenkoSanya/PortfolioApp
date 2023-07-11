@@ -1,5 +1,10 @@
 import Foundation
 
+//protocol PostsViewProtocol: AnyObject {
+//    func display(_ post: [PostsData])
+//    func display(isLoading: Bool)
+//}
+
 final class PostsViewModel {
     
     var postData: (([PostsData]) -> Void)?

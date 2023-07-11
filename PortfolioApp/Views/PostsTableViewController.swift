@@ -34,3 +34,18 @@ final class PostsTableViewController: UITableViewController {
         tableView.register(R.nib.postsTableViewCell)
     }
 }
+
+//extension PostsTableViewController: PostsViewProtocol {
+//    func display(isLoading: Bool) {
+//        if isLoading {
+//            tableView.refreshControl?.beginRefreshing()
+//        } else {
+//            tableView.refreshControl?.endRefreshing()
+//        }
+//    }
+//
+//    func display(_ post: [PostsData]) {
+//        modelPosts = post
+//        tableView.reloadData()
+//    }
+//}
