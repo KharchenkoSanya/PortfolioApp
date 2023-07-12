@@ -52,7 +52,7 @@ final class PostsTableViewController: UITableViewController {
     
     private func configureTableView() {
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(R.nib.postsTableViewCell)
