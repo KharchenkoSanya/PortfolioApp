@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86N-Mj-9tS">
-                        <rect key="frame" x="16" y="20.333333333333332" width="288" height="15.666666666666668"/>
+                        <rect key="frame" x="16" y="36.333333333333336" width="288" height="15.666666666666664"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGA-jY-aeh">
-                        <rect key="frame" x="16" y="0.0" width="288" height="20.333333333333332"/>
+                        <rect key="frame" x="16" y="7.9999999999999982" width="288" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,11 +33,11 @@
                 <constraints>
                     <constraint firstItem="lGA-jY-aeh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GUJ-Yz-VAI"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="86N-Mj-9tS" secondAttribute="bottom" constant="8" id="N7b-BS-xzT"/>
-                    <constraint firstItem="86N-Mj-9tS" firstAttribute="top" secondItem="lGA-jY-aeh" secondAttribute="bottom" id="UEb-LZ-PiW"/>
+                    <constraint firstItem="86N-Mj-9tS" firstAttribute="top" secondItem="lGA-jY-aeh" secondAttribute="bottom" constant="8" id="UEb-LZ-PiW"/>
                     <constraint firstItem="86N-Mj-9tS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="eA8-Ef-tva"/>
                     <constraint firstAttribute="trailing" secondItem="86N-Mj-9tS" secondAttribute="trailing" constant="16" id="n2G-l6-qTJ"/>
                     <constraint firstAttribute="trailing" secondItem="lGA-jY-aeh" secondAttribute="trailing" constant="16" id="s08-rF-h1L"/>
-                    <constraint firstItem="lGA-jY-aeh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wSR-Wo-T9x"/>
+                    <constraint firstItem="lGA-jY-aeh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="wSR-Wo-T9x"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="uTu-TL-vZq"/>
