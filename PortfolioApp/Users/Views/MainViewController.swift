@@ -1,18 +1,18 @@
 import UIKit
 
-final class UsersTableViewController: UITableViewController {
-    var presenter: UsersPresenter!
-    private var models: [User] = []
+final class MainViewController: UITableViewController {
+    private var models: [UserData] = []
+    var onRefresh: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        onRefresh()
+        onRefresh?()
     }
     
     @objc
-    private func onRefresh() {
-        presenter.onRefresh()
+    internal func refreshAction() {
+        onRefresh?()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -27,6 +27,11 @@ final class UsersTableViewController: UITableViewController {
         let user = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.usersTableViewCell, for: indexPath)!
         cell.setup(user: user)
+        cell.onPostButtonTap = { [weak self] in
+            guard let self else { return }
+            let controller = PostComposer.build(userID: user.id)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
         return cell
     }
     
@@ -40,14 +45,14 @@ final class UsersTableViewController: UITableViewController {
         tableView.refreshControl = UIRefreshControl()
         tableView.estimatedRowHeight = 175
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
         tableView.register(R.nib.usersTableViewCell)
     }
 }
 
-extension UsersTableViewController: UsersView {
+extension MainViewController: UsersViewProtocol {
     
-    func display(_ users: [User]) {
+    func display(_ users: [UserData]) {
         models = users
         tableView.reloadData()
     }
