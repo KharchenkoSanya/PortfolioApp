@@ -29,7 +29,7 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         companyStatic.text = R.string.texts.userCompanyStatic()
         addressStatic.text = R.string.texts.userAddressStatic()
     }
-
+    
     @IBAction func postsButton(_ sender: Any) {
         onPostButtonTap?()
     }

@@ -8,7 +8,7 @@ final class PostsTableViewController: UITableViewController {
     
     init(viewModel: PostsViewModel) {
         self.viewModel = viewModel
-        super.init(style: .plain)
+        super.init(style: .grouped)
     }
     
     required init?(coder: NSCoder) {
@@ -19,7 +19,6 @@ final class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Posts"
         configureTableView()
-        
         viewModel.isLoadingData = { [weak self] isLoading in
             if isLoading {
                 self?.tableView.refreshControl?.beginRefreshing()
@@ -53,6 +52,7 @@ final class PostsTableViewController: UITableViewController {
     
     private func configureTableView() {
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(R.nib.postsTableViewCell)

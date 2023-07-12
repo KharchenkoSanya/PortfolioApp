@@ -1,25 +1,22 @@
 import Foundation
 
 final class PostsViewModel {
-    
+    private var userID: Int
     var postData: (([PostsData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
-    var postID: String
     
-    init(postID: String) {
-        self.postID = postID
+    init(userID: Int) {
+        self.userID = userID
     }
     
     func onLoad() {
         postData?([])
         postsURLRequest()
-        
     }
     
     func postsURLRequest() {
         isLoadingData?(true)
-        var urlComponents = URLComponents(string: "https://jsonplaceholder.typicode.com/posts")!
-        urlComponents.queryItems = [URLQueryItem(name: "post_id", value: postID)]
+        let urlComponents = URLComponents(string: "https://jsonplaceholder.typicode.com/users/\(userID)/posts")!
         var requestPosts = URLRequest(url: urlComponents.url!)
         requestPosts.httpMethod = "GET"
         let session = URLSession(configuration: .default)

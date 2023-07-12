@@ -1,7 +1,6 @@
 import UIKit
 
 final class MainViewController: UITableViewController {
-    
     private var models: [UserData] = []
     var onRefresh: (() -> Void)?
     
@@ -30,7 +29,7 @@ final class MainViewController: UITableViewController {
         cell.setup(user: user)
         cell.onPostButtonTap = { [weak self] in
             guard let self else { return }
-            let controller = PostComposer.build(postID: user.id)
+            let controller = PostComposer.build(userID: user.id)
             self.navigationController?.pushViewController(controller, animated: true)
         }
         return cell

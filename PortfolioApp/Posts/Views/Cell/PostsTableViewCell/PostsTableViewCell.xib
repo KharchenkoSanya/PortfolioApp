@@ -17,14 +17,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6b-2A-2d4">
-                        <rect key="frame" x="10" y="0.0" width="300" height="20.333333333333332"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6b-2A-2d4">
+                        <rect key="frame" x="10" y="0.0" width="300" height="64.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64.670000000000002" id="iud-3c-9Kd"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQi-I2-MuX">
-                        <rect key="frame" x="10" y="20.333333333333336" width="300" height="20.333333333333336"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQi-I2-MuX">
+                        <rect key="frame" x="10" y="64.666666666666671" width="300" height="20.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.329999999999998" id="UrS-wr-yQi"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,7 +40,7 @@
                     <constraint firstAttribute="trailing" secondItem="uQi-I2-MuX" secondAttribute="trailing" constant="10" id="M8x-xe-IIe"/>
                     <constraint firstItem="b6b-2A-2d4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Puv-nW-aoI"/>
                     <constraint firstAttribute="trailing" secondItem="b6b-2A-2d4" secondAttribute="trailing" constant="10" id="QOp-DE-gI9"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uQi-I2-MuX" secondAttribute="bottom" id="Rei-tX-9cI"/>
+                    <constraint firstAttribute="bottom" secondItem="uQi-I2-MuX" secondAttribute="bottom" id="Rei-tX-9cI"/>
                     <constraint firstItem="uQi-I2-MuX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nYT-35-lMf"/>
                     <constraint firstItem="uQi-I2-MuX" firstAttribute="top" secondItem="b6b-2A-2d4" secondAttribute="bottom" id="thG-dB-cBV"/>
                     <constraint firstItem="b6b-2A-2d4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wxd-WJ-SWd"/>

@@ -81,6 +81,7 @@
 		33529DD42A52C6A4007224FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				335D73CD2A5C69FE00EA9EA6 /* PostComposer.swift */,
 				3379309C2A586174002F7537 /* PostsTableViewController.swift */,
 				3379309D2A586174002F7537 /* PostsTableViewController.xib */,
 				33529DD52A52C6B7007224FD /* Cell */,
@@ -99,7 +100,6 @@
 		33529DD62A52C6FC007224FD /* ViewsModels */ = {
 			isa = PBXGroup;
 			children = (
-				335D73CD2A5C69FE00EA9EA6 /* PostComposer.swift */,
 				3379309A2A585818002F7537 /* PostsViewModel.swift */,
 			);
 			path = ViewsModels;
@@ -136,6 +136,7 @@
 		335D73D12A5D477700EA9EA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33F9DF8029DD539A007F3DCA /* UserComposer.swift */,
 				33F9DF8429DD53AF007F3DCA /* MainViewController.swift */,
 				335D73D42A5D514C00EA9EA6 /* Cell */,
 			);
@@ -145,7 +146,6 @@
 		335D73D22A5D478B00EA9EA6 /* ViewsModels */ = {
 			isa = PBXGroup;
 			children = (
-				33F9DF8029DD539A007F3DCA /* UserComposer.swift */,
 				33F9DF8229DD53A8007F3DCA /* MainViewModel.swift */,
 			);
 			path = ViewsModels;

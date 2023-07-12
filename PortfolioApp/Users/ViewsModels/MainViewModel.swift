@@ -6,7 +6,6 @@ protocol UsersViewProtocol: AnyObject {
 }
 
 final class MainViewModel {
-       
     var viewData: (([UserData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
     
