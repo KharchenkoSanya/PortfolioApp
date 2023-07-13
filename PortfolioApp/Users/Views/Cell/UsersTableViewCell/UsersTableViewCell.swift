@@ -29,7 +29,7 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         addressStatic.text = R.string.texts.userAddressStatic()
     }
     
-    @IBAction func postsButton(_ sender: Any) {
+    @IBAction private func postsButton(_ sender: Any) {
         onPostButtonTap?()
     }
     
