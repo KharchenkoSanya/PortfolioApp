@@ -17,7 +17,6 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     @IBOutlet private weak var companyValue: UILabel!
     @IBOutlet private weak var addressValue: UILabel!
     @IBOutlet private weak var albumButton: UIButton!
-    
     var onPostButtonTap: (() -> Void)?
     
     override func awakeFromNib() {
