@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainViewController: UITableViewController {
+final class UsersTableViewController: UITableViewController {
     private var models: [UserData] = []
     var onRefresh: (() -> Void)?
     
@@ -50,7 +50,7 @@ final class MainViewController: UITableViewController {
     }
 }
 
-extension MainViewController: UsersViewProtocol {
+extension UsersTableViewController: UsersViewProtocol {
     
     func display(_ users: [UserData]) {
         models = users
