@@ -40,18 +40,6 @@ final class UsersTableViewController: UITableViewController {
         let user = models[indexPath.row]
     }
     
-    private func configureTableView() {
-        title = R.string.texts.userTitle()
-        tableView.refreshControl = UIRefreshControl()
-        tableView.estimatedRowHeight = 175
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.refreshControl?.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
-        tableView.register(R.nib.usersTableViewCell)
-    }
-}
-
-extension UsersTableViewController: UsersViewProtocol {
-    
     func display(_ users: [UserData]) {
         models = users
         tableView.reloadData()
@@ -63,5 +51,14 @@ extension UsersTableViewController: UsersViewProtocol {
         } else {
             tableView.refreshControl?.endRefreshing()
         }
+    }
+    
+    private func configureTableView() {
+        title = R.string.texts.userTitle()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.estimatedRowHeight = 175
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
+        tableView.register(R.nib.usersTableViewCell)
     }
 }

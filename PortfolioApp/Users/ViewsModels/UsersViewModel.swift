@@ -1,10 +1,5 @@
 import Foundation
 
-protocol UsersViewProtocol: AnyObject {
-    func display(_ users: [UserData])
-    func display(isLoading: Bool)
-}
-
 final class UsersViewModel {
     var viewData: (([UserData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
