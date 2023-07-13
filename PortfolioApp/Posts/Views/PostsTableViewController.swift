@@ -18,6 +18,10 @@ final class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Posts"
         configureTableView()
+        bindToViewModel()
+    }
+    
+    func bindToViewModel() {
         viewModel.isLoadingData = { [weak self] isLoading in
             if isLoading {
                 self?.tableView.refreshControl?.beginRefreshing()
