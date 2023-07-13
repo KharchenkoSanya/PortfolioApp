@@ -5,7 +5,7 @@ protocol UsersViewProtocol: AnyObject {
     func display(isLoading: Bool)
 }
 
-final class MainViewModel {
+final class UsersViewModel {
     var viewData: (([UserData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
     

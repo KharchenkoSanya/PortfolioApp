@@ -26,7 +26,7 @@
 		33DBC9B529E2D193004052E4 /* R.Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DBC9B429E2D193004052E4 /* R.Aliases.swift */; };
 		33DBC9BA29E2DE33004052E4 /* Texts.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33DBC9BC29E2DE33004052E4 /* Texts.strings */; };
 		33F9DF8129DD539A007F3DCA /* UserComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8029DD539A007F3DCA /* UserComposer.swift */; };
-		33F9DF8329DD53A8007F3DCA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8229DD53A8007F3DCA /* MainViewModel.swift */; };
+		33F9DF8329DD53A8007F3DCA /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8229DD53A8007F3DCA /* UsersViewModel.swift */; };
 		33F9DF8529DD53AF007F3DCA /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */; };
 		33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */; };
 		33F9DF8C29DDC7AE007F3DCA /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */; };
@@ -57,7 +57,7 @@
 		33DBC9B429E2D193004052E4 /* R.Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.Aliases.swift; sourceTree = "<group>"; };
 		33DBC9BB29E2DE33004052E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Texts.strings; sourceTree = "<group>"; };
 		33F9DF8029DD539A007F3DCA /* UserComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComposer.swift; sourceTree = "<group>"; };
-		33F9DF8229DD53A8007F3DCA /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		33F9DF8229DD53A8007F3DCA /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		33F9DF8429DD53AF007F3DCA /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		33F9DF8929DDC7AE007F3DCA /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		33F9DF8A29DDC7AE007F3DCA /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		335D73D22A5D478B00EA9EA6 /* ViewsModels */ = {
 			isa = PBXGroup;
 			children = (
-				33F9DF8229DD53A8007F3DCA /* MainViewModel.swift */,
+				33F9DF8229DD53A8007F3DCA /* UsersViewModel.swift */,
 			);
 			path = ViewsModels;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				335D73CE2A5C69FE00EA9EA6 /* PostComposer.swift in Sources */,
 				3379309E2A586175002F7537 /* PostsTableViewController.swift in Sources */,
 				337499C229D5D63100A7AA82 /* SceneDelegate.swift in Sources */,
-				33F9DF8329DD53A8007F3DCA /* MainViewModel.swift in Sources */,
+				33F9DF8329DD53A8007F3DCA /* UsersViewModel.swift in Sources */,
 				33F9DF8129DD539A007F3DCA /* UserComposer.swift in Sources */,
 				334C8D9129E585E6006AA5BF /* R.generated.swift in Sources */,
 				334417362A5E8FE100B0E313 /* PostsTableViewCell.swift in Sources */,

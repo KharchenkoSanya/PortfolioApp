@@ -16,7 +16,6 @@ final class PostsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Posts"
         configureTableView()
         bindToViewModel()
     }
@@ -54,6 +53,7 @@ final class PostsTableViewController: UITableViewController {
     }
     
     private func configureTableView() {
+        title = R.string.texts.postTitle()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.dataSource = self
