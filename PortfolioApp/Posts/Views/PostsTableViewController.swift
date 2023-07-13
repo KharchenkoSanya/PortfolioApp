@@ -4,7 +4,6 @@ import RswiftResources
 final class PostsTableViewController: UITableViewController {
     private var modelPosts: [PostsData] = []
     private var viewModel: PostsViewModel
-    var onSelectUserButton: ((PostsData) -> Void)?
     
     init(viewModel: PostsViewModel) {
         self.viewModel = viewModel
