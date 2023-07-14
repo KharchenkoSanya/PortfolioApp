@@ -61,19 +61,6 @@ final class UsersTableViewController: UITableViewController {
         let user = modelUsers[indexPath.row]
     }
     
-    func display(_ users: [UserData]) {
-        modelUsers = users
-        tableView.reloadData()
-    }
-    
-    func display(isLoading: Bool) {
-        if isLoading {
-            tableView.refreshControl?.beginRefreshing()
-        } else {
-            tableView.refreshControl?.endRefreshing()
-        }
-    }
-    
     private func configureTableView() {
         title = R.string.texts.userTitle()
         tableView.refreshControl = UIRefreshControl()
