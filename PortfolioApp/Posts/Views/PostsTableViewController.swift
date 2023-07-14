@@ -3,11 +3,11 @@ import RswiftResources
 
 final class PostsTableViewController: UITableViewController {
     private var modelPosts: [PostsData] = []
-    private var viewModel: PostsViewModel
+    private var postsViewModel: PostsViewModel
     
     init(viewModel: PostsViewModel) {
-        self.viewModel = viewModel
-        super.init(style: .grouped)
+        self.postsViewModel = viewModel
+        super.init(style: .plain)
     }
     
     required init?(coder: NSCoder) {
@@ -17,11 +17,11 @@ final class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        bindToViewModel()
+        bindToPostsViewModel()
     }
     
-    func bindToViewModel() {
-        viewModel.isLoadingData = { [weak self] isLoading in
+    func bindToPostsViewModel() {
+        postsViewModel.isLoadingData = { [weak self] isLoading in
             if isLoading {
                 self?.tableView.refreshControl?.beginRefreshing()
             } else {
@@ -29,12 +29,12 @@ final class PostsTableViewController: UITableViewController {
             }
         }
         
-        viewModel.postData = { [weak self] posts in
+        postsViewModel.postsViewData = { [weak self] posts in
             self?.modelPosts = posts
             self?.tableView.reloadData()
         }
         
-        viewModel.onLoad()
+        postsViewModel.onLoad()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

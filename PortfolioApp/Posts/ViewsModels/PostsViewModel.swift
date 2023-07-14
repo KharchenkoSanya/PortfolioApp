@@ -2,7 +2,7 @@ import Foundation
 
 final class PostsViewModel {
     private var userID: Int
-    var postData: (([PostsData]) -> Void)?
+    var postsViewData: (([PostsData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
     
     init(userID: Int) {
@@ -10,7 +10,7 @@ final class PostsViewModel {
     }
     
     func onLoad() {
-        postData?([])
+        postsViewData?([])
         postsURLRequest()
     }
     
@@ -26,7 +26,7 @@ final class PostsViewModel {
             do {
                 let result = try JSONDecoder().decode([PostsData].self, from: data)
                 DispatchQueue.main.async {
-                    self.postData?(result)
+                    self.postsViewData?(result)
                     self.isLoadingData?(false)
                 }
             } catch {

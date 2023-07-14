@@ -1,14 +1,19 @@
 import Foundation
 
 final class UsersViewModel {
-    var viewData: (([UserData]) -> Void)?
+    var usersViewData: (([UserData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
     
     init() {
-        viewData?([])
+        usersViewData?([])
     }
     
-    func onRefresh() {
+    func onLoad() {
+        usersViewData?([])
+        usersURLRequest()
+    }
+    
+    func usersURLRequest() {
         isLoadingData?(true)
         var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/users")!)
         request.httpMethod = "GET"
@@ -19,7 +24,7 @@ final class UsersViewModel {
             do {
                 let result = try JSONDecoder().decode([UserData].self, from: data)
                 DispatchQueue.main.async {
-                    self.viewData?(result)
+                    self.usersViewData?(result)
                     self.isLoadingData?(false)
                 }
             } catch {
