@@ -1,15 +1,20 @@
 import Foundation
 
-protocol UsersView: AnyObject {
-    func display(_ users: [User])
-    func display(isLoading: Bool)
-}
-
-final class UsersPresenter {
-    weak var view: UsersView?
+final class UsersViewModel {
+    var usersViewData: (([UserData]) -> Void)?
+    var isLoadingData: ((Bool) -> Void)?
     
-    func onRefresh() {
-        view?.display(isLoading: true)
+    init() {
+        usersViewData?([])
+    }
+    
+    func onLoad() {
+        usersViewData?([])
+        usersURLRequest()
+    }
+    
+    func usersURLRequest() {
+        isLoadingData?(true)
         var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/users")!)
         request.httpMethod = "GET"
         let session = URLSession(configuration: .default)
@@ -17,14 +22,14 @@ final class UsersPresenter {
             guard let data = data else { return }
             
             do {
-                let result = try JSONDecoder().decode([User].self, from: data)
+                let result = try JSONDecoder().decode([UserData].self, from: data)
                 DispatchQueue.main.async {
-                    self.view?.display(result)
-                    self.view?.display(isLoading: false)
+                    self.usersViewData?(result)
+                    self.isLoadingData?(false)
                 }
             } catch {
                 DispatchQueue.main.async {
-                    self.view?.display(isLoading: false)
+                    self.isLoadingData?(false)
                 }
             }
         }

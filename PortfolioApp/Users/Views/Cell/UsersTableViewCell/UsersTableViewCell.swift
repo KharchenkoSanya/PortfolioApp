@@ -16,6 +16,8 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     @IBOutlet private weak var websiteValue: UILabel!
     @IBOutlet private weak var companyValue: UILabel!
     @IBOutlet private weak var addressValue: UILabel!
+    @IBOutlet private weak var albumButton: UIButton!
+    var onPostButtonTap: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +29,11 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         addressStatic.text = R.string.texts.userAddressStatic()
     }
     
-    func setup(user: User) {
+    @IBAction private func postsButton(_ sender: Any) {
+        onPostButtonTap?()
+    }
+    
+    func setup(user: UserData) {
         nameTitleValue.text = user.name
         userNameValue.text = user.username
         emailValue.text = user.email

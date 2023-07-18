@@ -5,3 +5,4 @@
 "User.websiteStatic" = "Website";
 "User.companyStatic" = "Company";
 "User.addressStatic" = "Address";
+"Post.title" = "Posts";

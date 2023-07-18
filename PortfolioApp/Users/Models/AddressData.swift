@@ -1,6 +1,6 @@
 import Foundation
 
-struct Address: Decodable {
+struct AddressData: Decodable {
     let city: String
     let street: String
     let suite: String
