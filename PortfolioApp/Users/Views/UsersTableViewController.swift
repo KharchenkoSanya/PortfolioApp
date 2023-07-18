@@ -17,6 +17,12 @@ final class UsersTableViewController: UITableViewController {
         super.viewDidLoad()
         configureTableView()
         bindToViewModel()
+        loadData()
+    }
+    
+    @objc
+    func loadData() {
+        usersViewModel.onLoad()
     }
     
     func bindToViewModel() {
@@ -32,8 +38,6 @@ final class UsersTableViewController: UITableViewController {
             self?.modelUsers = users
             self?.tableView.reloadData()
         }
-        
-        usersViewModel.onLoad()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,8 +66,10 @@ final class UsersTableViewController: UITableViewController {
     }
     
     private func configureTableView() {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        tableView.refreshControl = refresh
         title = R.string.texts.userTitle()
-        tableView.refreshControl = UIRefreshControl()
         tableView.estimatedRowHeight = 175
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(R.nib.usersTableViewCell)
