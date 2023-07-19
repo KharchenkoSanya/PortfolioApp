@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331A27492A680CA800A40BA8 /* AlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A27482A680CA800A40BA8 /* AlbumData.swift */; };
+		331A274B2A680DFD00A40BA8 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A274A2A680DFD00A40BA8 /* AlbumsViewModel.swift */; };
 		332E44D52A66E08B00E4729F /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332E44D32A66E08B00E4729F /* AlbumTableViewController.swift */; };
 		332E44D62A66E08B00E4729F /* AlbumTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 332E44D42A66E08B00E4729F /* AlbumTableViewController.xib */; };
 		332E44DB2A66E10F00E4729F /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332E44D92A66E10F00E4729F /* AlbumTableViewCell.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		331A27482A680CA800A40BA8 /* AlbumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
+		331A274A2A680DFD00A40BA8 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
 		332E44D32A66E08B00E4729F /* AlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
 		332E44D42A66E08B00E4729F /* AlbumTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewController.xib; sourceTree = "<group>"; };
 		332E44D92A66E10F00E4729F /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		332E44D12A66DC9400E4729F /* ViewsModels */ = {
 			isa = PBXGroup;
 			children = (
+				331A274A2A680DFD00A40BA8 /* AlbumsViewModel.swift */,
 			);
 			path = ViewsModels;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		332E44D22A66DCA000E4729F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				331A27482A680CA800A40BA8 /* AlbumData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				334F04D029DC95FC00800A0C /* UserData.swift in Sources */,
+				331A27492A680CA800A40BA8 /* AlbumData.swift in Sources */,
 				33BF039229EE894400C797C0 /* CompanyData.swift in Sources */,
 				33F9DF8529DD53AF007F3DCA /* UsersTableViewController.swift in Sources */,
 				337499C029D5D63100A7AA82 /* AppDelegate.swift in Sources */,
@@ -486,6 +493,7 @@
 				33DBC9B529E2D193004052E4 /* R.Aliases.swift in Sources */,
 				33BF039029EE890A00C797C0 /* AddressData.swift in Sources */,
 				3379309B2A585818002F7537 /* PostsViewModel.swift in Sources */,
+				331A274B2A680DFD00A40BA8 /* AlbumsViewModel.swift in Sources */,
 				33BF038C29EE848D00C797C0 /* UITableViewCell+Extensions.swift in Sources */,
 				33F9DF8B29DDC7AE007F3DCA /* UsersTableViewCell.swift in Sources */,
 				337930982A585618002F7537 /* PostsData.swift in Sources */,
