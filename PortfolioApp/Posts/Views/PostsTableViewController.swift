@@ -20,7 +20,7 @@ final class PostsTableViewController: UITableViewController {
         bindToPostsViewModel()
     }
     
-    func bindToPostsViewModel() {
+    private func bindToPostsViewModel() {
         postsViewModel.isLoadingData = { [weak self] isLoading in
             if isLoading {
                 self?.tableView.refreshControl?.beginRefreshing()
@@ -59,6 +59,5 @@ final class PostsTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(R.nib.postsTableViewCell)
-        tableView.refreshControl = UIRefreshControl()
     }
 }

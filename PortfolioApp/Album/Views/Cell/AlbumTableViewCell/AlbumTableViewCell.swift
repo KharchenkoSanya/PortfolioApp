@@ -1,9 +1,12 @@
 import UIKit
 import RswiftResources
 
-class AlbumTableViewCell: UITableViewCell, ReuseIdentifierType {
+final class AlbumTableViewCell: UITableViewCell, ReuseIdentifierType {
     public typealias ReusableType = AlbumTableViewCell
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
     
+    func setup(album: AlbumData) {
+        titleLabel.text = album.title
+    }
 }

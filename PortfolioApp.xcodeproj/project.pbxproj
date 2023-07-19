@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		331A27492A680CA800A40BA8 /* AlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A27482A680CA800A40BA8 /* AlbumData.swift */; };
 		331A274B2A680DFD00A40BA8 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A274A2A680DFD00A40BA8 /* AlbumsViewModel.swift */; };
+		331A274D2A6823C600A40BA8 /* AlbumComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A274C2A6823C600A40BA8 /* AlbumComposer.swift */; };
 		332E44D52A66E08B00E4729F /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332E44D32A66E08B00E4729F /* AlbumTableViewController.swift */; };
 		332E44D62A66E08B00E4729F /* AlbumTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 332E44D42A66E08B00E4729F /* AlbumTableViewController.xib */; };
 		332E44DB2A66E10F00E4729F /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332E44D92A66E10F00E4729F /* AlbumTableViewCell.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		331A27482A680CA800A40BA8 /* AlbumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
 		331A274A2A680DFD00A40BA8 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
+		331A274C2A6823C600A40BA8 /* AlbumComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumComposer.swift; sourceTree = "<group>"; };
 		332E44D32A66E08B00E4729F /* AlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
 		332E44D42A66E08B00E4729F /* AlbumTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewController.xib; sourceTree = "<group>"; };
 		332E44D92A66E10F00E4729F /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		332E44D02A66DC8C00E4729F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				331A274C2A6823C600A40BA8 /* AlbumComposer.swift */,
 				332E44D32A66E08B00E4729F /* AlbumTableViewController.swift */,
 				332E44D42A66E08B00E4729F /* AlbumTableViewController.xib */,
 				332E44D72A66E0D700E4729F /* Cell */,
@@ -477,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				334F04D029DC95FC00800A0C /* UserData.swift in Sources */,
+				331A274D2A6823C600A40BA8 /* AlbumComposer.swift in Sources */,
 				331A27492A680CA800A40BA8 /* AlbumData.swift in Sources */,
 				33BF039229EE894400C797C0 /* CompanyData.swift in Sources */,
 				33F9DF8529DD53AF007F3DCA /* UsersTableViewController.swift in Sources */,

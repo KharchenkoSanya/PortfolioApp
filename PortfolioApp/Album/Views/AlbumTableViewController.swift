@@ -1,8 +1,8 @@
 import UIKit
 import RswiftResources
 
-class AlbumTableViewController: UITableViewController {
-    private var modelPosts: [AlbumData] = []
+final class AlbumTableViewController: UITableViewController {
+    private var modelAlbums: [AlbumData] = []
     var albumsViewModel: AlbumsViewModel
     
     init(viewModel: AlbumsViewModel) {
@@ -17,14 +17,38 @@ class AlbumTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        bindToAlbumsViewModel()
     }
-
+    
+    private func bindToAlbumsViewModel() {
+        albumsViewModel.isLoadingData = { [weak self] isLoading in
+            if isLoading {
+                self?.tableView.refreshControl?.beginRefreshing()
+            } else {
+                self?.tableView.refreshControl?.endRefreshing()
+            }
+        }
+        
+        albumsViewModel.albumsViewData = { [weak self] albums in
+            self?.modelAlbums = albums
+            self?.tableView.reloadData()
+        }
+        
+        albumsViewModel.onLoad()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return modelPosts.count
+        return modelAlbums.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let album = modelAlbums[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.albumTableViewCell, for: indexPath)!
+        cell.setup(album: album)
+        return cell
     }
     
     private func configureTableView() {
@@ -34,6 +58,5 @@ class AlbumTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(R.nib.albumTableViewCell)
-        tableView.refreshControl = UIRefreshControl()
     }
 }
