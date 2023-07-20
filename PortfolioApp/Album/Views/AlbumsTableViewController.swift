@@ -1,7 +1,7 @@
 import UIKit
 import RswiftResources
 
-final class AlbumTableViewController: UITableViewController {
+final class AlbumsTableViewController: UITableViewController {
     private var modelAlbums: [AlbumData] = []
     private var albumsViewModel: AlbumsViewModel
     
