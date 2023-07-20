@@ -16,8 +16,8 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     @IBOutlet private weak var websiteValue: UILabel!
     @IBOutlet private weak var companyValue: UILabel!
     @IBOutlet private weak var addressValue: UILabel!
-    @IBOutlet private weak var albumButton: UIButton!
     var onPostButtonTap: (() -> Void)?
+    var onAlbumButtonTap: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +31,10 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     
     @IBAction private func postsButton(_ sender: Any) {
         onPostButtonTap?()
+    }
+    
+    @IBAction private func albumButton(_ sender: Any) {
+        onAlbumButtonTap?()
     }
     
     func setup(user: UserData) {

@@ -1,8 +1,8 @@
 import Foundation
 
-final class PostsViewModel {
+final class AlbumsViewModel {
     private var userID: Int
-    var postsViewData: (([PostsData]) -> Void)?
+    var albumsViewData: (([AlbumData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
     
     init(userID: Int) {
@@ -10,23 +10,23 @@ final class PostsViewModel {
     }
     
     func onLoad() {
-        postsViewData?([])
-        postsURLRequest()
+        albumsViewData?([])
+        albumsURLRequest()
     }
     
-    private func postsURLRequest() {
+    private func albumsURLRequest() {
         isLoadingData?(true)
-        let urlComponents = URLComponents(string: "https://jsonplaceholder.typicode.com/users/\(userID)/posts")!
-        var requestPosts = URLRequest(url: urlComponents.url!)
-        requestPosts.httpMethod = "GET"
+        let urlComponents = URLComponents(string: "https://jsonplaceholder.typicode.com/users/\(userID)/albums")!
+        var requestAlbums = URLRequest(url: urlComponents.url!)
+        requestAlbums.httpMethod = "GET"
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: requestPosts) { data, _, _ in
+        let task = session.dataTask(with: requestAlbums) { data, _, _ in
             guard let data = data else { return }
             
             do {
-                let result = try JSONDecoder().decode([PostsData].self, from: data)
+                let result = try JSONDecoder().decode([AlbumData].self, from: data)
                 DispatchQueue.main.async {
-                    self.postsViewData?(result)
+                    self.albumsViewData?(result)
                     self.isLoadingData?(false)
                 }
             } catch {

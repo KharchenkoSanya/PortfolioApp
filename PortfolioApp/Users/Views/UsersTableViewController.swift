@@ -2,7 +2,7 @@ import UIKit
 
 final class UsersTableViewController: UITableViewController {
     private var modelUsers: [UserData] = []
-    var usersViewModel: UsersViewModel
+    private var usersViewModel: UsersViewModel
     
     init(usersViewModel: UsersViewModel) {
         self.usersViewModel = usersViewModel
@@ -25,7 +25,7 @@ final class UsersTableViewController: UITableViewController {
         usersViewModel.onLoad()
     }
     
-    func bindToViewModel() {
+    private func bindToViewModel() {
         usersViewModel.isLoadingData = { [weak self] isLoading in
             if isLoading {
                 self?.tableView.refreshControl?.beginRefreshing()
@@ -54,7 +54,13 @@ final class UsersTableViewController: UITableViewController {
         cell.setup(user: user)
         cell.onPostButtonTap = { [weak self] in
             guard let self else { return }
-            let controller = PostComposer.build(userID: user.id)
+            let controller = PostsComposer.build(userID: user.id)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+        cell.onAlbumButtonTap = { [weak self] in
+            guard let self else { return }
+            let controller = AlbumsComposer.build(userID: user.id)
             self.navigationController?.pushViewController(controller, animated: true)
         }
         return cell

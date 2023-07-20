@@ -1,6 +1,6 @@
 import UIKit
 
-final class UserComposer {
+final class UsersComposer {
     
     private init() {}
     
