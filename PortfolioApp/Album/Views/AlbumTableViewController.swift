@@ -3,7 +3,7 @@ import RswiftResources
 
 final class AlbumTableViewController: UITableViewController {
     private var modelAlbums: [AlbumData] = []
-    var albumsViewModel: AlbumsViewModel
+    private var albumsViewModel: AlbumsViewModel
     
     init(viewModel: AlbumsViewModel) {
         self.albumsViewModel = viewModel
@@ -18,6 +18,7 @@ final class AlbumTableViewController: UITableViewController {
         super.viewDidLoad()
         configureTableView()
         bindToAlbumsViewModel()
+        albumsViewModel.onLoad()
     }
     
     private func bindToAlbumsViewModel() {
@@ -33,8 +34,6 @@ final class AlbumTableViewController: UITableViewController {
             self?.modelAlbums = albums
             self?.tableView.reloadData()
         }
-        
-        albumsViewModel.onLoad()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

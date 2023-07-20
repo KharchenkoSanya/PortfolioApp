@@ -18,6 +18,7 @@ final class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
         configureTableView()
         bindToPostsViewModel()
+        postsViewModel.onLoad()
     }
     
     private func bindToPostsViewModel() {
@@ -33,8 +34,6 @@ final class PostsTableViewController: UITableViewController {
             self?.modelPosts = posts
             self?.tableView.reloadData()
         }
-        
-        postsViewModel.onLoad()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

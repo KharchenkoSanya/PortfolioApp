@@ -2,7 +2,7 @@ import UIKit
 
 final class UsersTableViewController: UITableViewController {
     private var modelUsers: [UserData] = []
-    var usersViewModel: UsersViewModel
+    private var usersViewModel: UsersViewModel
     
     init(usersViewModel: UsersViewModel) {
         self.usersViewModel = usersViewModel

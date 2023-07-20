@@ -33,7 +33,7 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
         onPostButtonTap?()
     }
     
-    @IBAction func albumButton(_ sender: Any) {
+    @IBAction private func albumButton(_ sender: Any) {
         onAlbumButtonTap?()
     }
     
