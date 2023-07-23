@@ -145,9 +145,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Album"/>
-                                <connections>
-                                    <action selector="albumButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eTx-Ae-uPk"/>
-                                </connections>
                             </button>
                         </subviews>
                     </stackView>
@@ -169,6 +166,7 @@
             <connections>
                 <outlet property="addressStatic" destination="kc0-OL-2j8" id="Bc4-gw-ANJ"/>
                 <outlet property="addressValue" destination="sOe-48-Xpp" id="3Nx-8p-Cn1"/>
+                <outlet property="albumButton" destination="XwB-ym-9wm" id="oVv-s0-qWc"/>
                 <outlet property="companyStatic" destination="qtP-dD-egi" id="r4h-L6-ul7"/>
                 <outlet property="companyValue" destination="YDs-HF-FpE" id="UHA-ae-x1K"/>
                 <outlet property="emailStatic" destination="Mtd-KH-fIR" id="dJz-U6-tff"/>
