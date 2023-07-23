@@ -2,7 +2,7 @@ import Foundation
 
 final class PostsViewModel {
     private var userID: Int
-    var postsViewData: (([PostsData]) -> Void)?
+    var postData: (([PostsData]) -> Void)?
     var isLoadingData: ((Bool) -> Void)?
     
     init(userID: Int) {
@@ -10,11 +10,11 @@ final class PostsViewModel {
     }
     
     func onLoad() {
-        postsViewData?([])
+        postData?([])
         postsURLRequest()
     }
     
-    private func postsURLRequest() {
+    func postsURLRequest() {
         isLoadingData?(true)
         let urlComponents = URLComponents(string: "https://jsonplaceholder.typicode.com/users/\(userID)/posts")!
         var requestPosts = URLRequest(url: urlComponents.url!)
@@ -26,7 +26,7 @@ final class PostsViewModel {
             do {
                 let result = try JSONDecoder().decode([PostsData].self, from: data)
                 DispatchQueue.main.async {
-                    self.postsViewData?(result)
+                    self.postData?(result)
                     self.isLoadingData?(false)
                 }
             } catch {

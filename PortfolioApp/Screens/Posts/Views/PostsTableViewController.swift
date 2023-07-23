@@ -1,13 +1,13 @@
 import UIKit
-import RswiftResources
 
 final class PostsTableViewController: UITableViewController {
     private var modelPosts: [PostsData] = []
-    private var postsViewModel: PostsViewModel
+    private var viewModel: PostsViewModel
+    var onSelectUserButton: ((PostsData) -> Void)?
     
     init(viewModel: PostsViewModel) {
-        self.postsViewModel = viewModel
-        super.init(style: .plain)
+        self.viewModel = viewModel
+        super.init(style: .grouped)
     }
     
     required init?(coder: NSCoder) {
@@ -16,13 +16,9 @@ final class PostsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Posts"
         configureTableView()
-        bindToPostsViewModel()
-        postsViewModel.onLoad()
-    }
-    
-    private func bindToPostsViewModel() {
-        postsViewModel.isLoadingData = { [weak self] isLoading in
+        viewModel.isLoadingData = { [weak self] isLoading in
             if isLoading {
                 self?.tableView.refreshControl?.beginRefreshing()
             } else {
@@ -30,10 +26,12 @@ final class PostsTableViewController: UITableViewController {
             }
         }
         
-        postsViewModel.postsViewData = { [weak self] posts in
+        viewModel.postData = { [weak self] posts in
             self?.modelPosts = posts
             self?.tableView.reloadData()
         }
+        
+        viewModel.onLoad()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,17 +44,17 @@ final class PostsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = modelPosts[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.postsTableViewCell, for: indexPath)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostsTableViewCell.identifier, for: indexPath) as! PostsTableViewCell
         cell.setup(post: post)
         return cell
     }
     
     private func configureTableView() {
-        title = R.string.texts.postTitle()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(R.nib.postsTableViewCell)
+        tableView.register(.init(nibName: PostsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PostsTableViewCell.identifier)
+        tableView.refreshControl = UIRefreshControl()
     }
 }

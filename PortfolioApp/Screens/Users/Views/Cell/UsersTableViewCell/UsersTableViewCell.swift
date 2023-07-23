@@ -1,8 +1,6 @@
 import UIKit
-import RswiftResources
 
-final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
-    public typealias ReusableType = UsersTableViewCell
+final class UsersTableViewCell: UITableViewCell {
     @IBOutlet private weak var nameTitleValue: UILabel!
     @IBOutlet private weak var userNameStatic: UILabel!
     @IBOutlet private weak var emailStatic: UILabel!
@@ -16,25 +14,22 @@ final class UsersTableViewCell: UITableViewCell, ReuseIdentifierType {
     @IBOutlet private weak var websiteValue: UILabel!
     @IBOutlet private weak var companyValue: UILabel!
     @IBOutlet private weak var addressValue: UILabel!
+    @IBOutlet private weak var albumButton: UIButton!
+    
     var onPostButtonTap: (() -> Void)?
-    var onAlbumButtonTap: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        userNameStatic.text = R.string.texts.userUserNameStatic()
-        emailStatic.text = R.string.texts.userEmailStatic()
-        phoneStatic.text = R.string.texts.userPhoneStatic()
-        websiteStatic.text = R.string.texts.userWebsiteStatic()
-        companyStatic.text = R.string.texts.userCompanyStatic()
-        addressStatic.text = R.string.texts.userAddressStatic()
+        userNameStatic.text = "User.title".localized
+        emailStatic.text = "User.emailStatic".localized
+        phoneStatic.text = "User.phoneStatic".localized
+        websiteStatic.text = "User.websiteStatic".localized
+        companyStatic.text = "User.companyStatic".localized
+        addressStatic.text = "User.addressStatic".localized
     }
     
-    @IBAction private func postsButton(_ sender: Any) {
+    @IBAction func postsButton(_ sender: Any) {
         onPostButtonTap?()
-    }
-    
-    @IBAction private func albumButton(_ sender: Any) {
-        onAlbumButtonTap?()
     }
     
     func setup(user: UserData) {
