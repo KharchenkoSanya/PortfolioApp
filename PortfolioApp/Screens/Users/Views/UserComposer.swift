@@ -1,15 +1,12 @@
 import UIKit
 
-final class UserComposer {
+final class UsersComposer {
     
     private init() {}
     
     static func build() -> UIViewController {
-        let mainViewModel = MainViewModel()
-        let mainViewController = MainViewController()
-        mainViewController.onRefresh = mainViewModel.onRefresh
-        mainViewModel.viewData = mainViewController.display
-        mainViewModel.isLoadingData = mainViewController.display
+        let mainViewModel = UsersViewModel()
+        let mainViewController = UsersTableViewController(usersViewModel: mainViewModel)
         return mainViewController
     }
 }
