@@ -15,8 +15,8 @@ final class UsersTableViewCell: UITableViewCell {
     @IBOutlet private weak var companyValue: UILabel!
     @IBOutlet private weak var addressValue: UILabel!
     @IBOutlet private weak var albumButton: UIButton!
-    
     var onPostButtonTap: (() -> Void)?
+    var onAlbumButtonTap: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,8 +28,12 @@ final class UsersTableViewCell: UITableViewCell {
         addressStatic.text = "User.addressStatic".localized
     }
     
-    @IBAction func postsButton(_ sender: Any) {
+    @IBAction private func postsButton(_ sender: Any) {
         onPostButtonTap?()
+    }
+    
+    @IBAction private func albumButton(_ sender: Any) {
+        onAlbumButtonTap?()
     }
     
     func setup(user: UserData) {
