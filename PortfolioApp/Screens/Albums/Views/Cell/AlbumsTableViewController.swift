@@ -1,11 +1,11 @@
 import UIKit
 
-final class PostsTableViewController: UITableViewController {
-    private var modelPosts: [PostsData] = []
-    private var postsViewModel: PostsViewModel
+final class AlbumsTableViewController: UITableViewController {
+    private var modelAlbums: [AlbumData] = []
+    private var albumsViewModel: AlbumsViewModel
     
-    init(viewModel: PostsViewModel) {
-        self.postsViewModel = viewModel
+    init(viewModel: AlbumsViewModel) {
+        self.albumsViewModel = viewModel
         super.init(style: .plain)
     }
     
@@ -16,12 +16,12 @@ final class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        bindToPostsViewModel()
-        postsViewModel.onLoad()
+        bindToAlbumsViewModel()
+        albumsViewModel.onLoad()
     }
     
-    private func bindToPostsViewModel() {
-        postsViewModel.isLoadingData = { [weak self] isLoading in
+    private func bindToAlbumsViewModel() {
+        albumsViewModel.isLoadingData = { [weak self] isLoading in
             if isLoading {
                 self?.tableView.refreshControl?.beginRefreshing()
             } else {
@@ -29,8 +29,8 @@ final class PostsTableViewController: UITableViewController {
             }
         }
         
-        postsViewModel.postViewData = { [weak self] posts in
-            self?.modelPosts = posts
+        albumsViewModel.albumsViewData = { [weak self] albums in
+            self?.modelAlbums = albums
             self?.tableView.reloadData()
         }
     }
@@ -40,22 +40,21 @@ final class PostsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return modelPosts.count
+        return modelAlbums.count
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post = modelPosts[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: PostsTableViewCell.identifier, for: indexPath) as! PostsTableViewCell
-        cell.setup(post: post)
+        let album = modelAlbums[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableViewCell.identifier, for: indexPath) as! AlbumTableViewCell
+        cell.setup(album: album)
         return cell
     }
     
     private func configureTableView() {
-        title = "Post.title".localized
+        title = "Album.title".localized
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(.init(nibName: PostsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PostsTableViewCell.identifier)
+        tableView.register(.init(nibName: AlbumTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AlbumTableViewCell.identifier)
     }
 }

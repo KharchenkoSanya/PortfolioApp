@@ -145,6 +145,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Album"/>
+                                <connections>
+                                    <action selector="albumButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3hi-VX-Lnx"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
