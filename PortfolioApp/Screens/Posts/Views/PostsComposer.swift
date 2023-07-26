@@ -1,6 +1,6 @@
 import UIKit
 
-final class PostComposer {
+final class PostsComposer {
     
     private init() {}
     

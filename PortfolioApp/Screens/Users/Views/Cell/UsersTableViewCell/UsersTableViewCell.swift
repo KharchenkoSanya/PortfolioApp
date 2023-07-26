@@ -17,6 +17,7 @@ final class UsersTableViewCell: UITableViewCell {
     @IBOutlet private weak var albumButton: UIButton!
     var onPostButtonTap: (() -> Void)?
     var onAlbumButtonTap: (() -> Void)?
+    var onPhotoButtonTap: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,10 @@ final class UsersTableViewCell: UITableViewCell {
     
     @IBAction private func albumButton(_ sender: Any) {
         onAlbumButtonTap?()
+    }
+    
+    @IBAction private func photoButton(_ sender: Any) {
+        onPhotoButtonTap?()
     }
     
     func setup(user: UserData) {

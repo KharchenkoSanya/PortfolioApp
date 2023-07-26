@@ -54,13 +54,19 @@ final class UsersTableViewController: UITableViewController {
         cell.setup(user: user)
         cell.onPostButtonTap = { [weak self] in
             guard let self else { return }
-            let controller = PostComposer.build(userID: user.id)
+            let controller = PostsComposer.build(userID: user.id)
             self.navigationController?.pushViewController(controller, animated: true)
         }
         
         cell.onAlbumButtonTap = { [weak self] in
             guard let self else { return }
             let controller = AlbumsComposer.build(userID: user.id)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+        cell.onPhotoButtonTap = { [weak self] in
+            guard let self else { return }
+            let controller = PhotosComposer.build(userID: user.id)
             self.navigationController?.pushViewController(controller, animated: true)
         }
         return cell

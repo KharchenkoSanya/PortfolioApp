@@ -137,6 +137,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Photos"/>
+                                <connections>
+                                    <action selector="photoButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Lqb-h5-mGl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwB-ym-9wm">
                                 <rect key="frame" x="213.33333333333334" y="0.0" width="106.66666666666666" height="40"/>
