@@ -17,10 +17,10 @@ final class PhotosViewModel {
     func photosURLRequest() {
         isLoadingData?(true)
         let urlComponents = URLComponents(string: "https://jsonplaceholder.typicode.com/users/\(userID)/photos")!
-        var requestPosts = URLRequest(url: urlComponents.url!)
-        requestPosts.httpMethod = "GET"
+        var requestPhotos = URLRequest(url: urlComponents.url!)
+        requestPhotos.httpMethod = "GET"
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: requestPosts) { data, _, _ in
+        let task = session.dataTask(with: requestPhotos) { data, _, _ in
             guard let data = data else { return }
             
             do {
