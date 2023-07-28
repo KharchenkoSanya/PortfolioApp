@@ -1,14 +1,12 @@
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+final class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     private var modelPhotos: [PhotosData] = []
     private var photosViewModel: PhotosViewModel
     
     init(viewModel: PhotosViewModel) {
         self.photosViewModel = viewModel
-        super.init(collectionViewLayout: UICollectionViewLayout())
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder: NSCoder) {
@@ -17,9 +15,9 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         configureCollectionView()
         bindToPhotosViewModel()
+        photosViewModel.onLoad()
     }
     
     private func bindToPhotosViewModel() {
@@ -31,30 +29,31 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
             }
         }
         
-        photosViewModel.photoViewData = { [weak self] albums in
-            self?.modelPhotos = albums
+        photosViewModel.photoViewData = { [weak self] photos in
+            self?.modelPhotos = photos
             self?.collectionView.reloadData()
         }
     }
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return modelPhotos.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let photo = modelPhotos[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         cell.setup(photo: photo)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width / 2) - 16, height: 100)
+        return CGSize(width: (view.frame.width / 2) - 16, height: 170)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }

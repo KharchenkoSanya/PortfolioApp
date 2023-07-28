@@ -14,7 +14,7 @@ final class PhotosViewModel {
         photosURLRequest()
     }
     
-    func photosURLRequest() {
+    private func photosURLRequest() {
         isLoadingData?(true)
         let urlComponents = URLComponents(string: "https://jsonplaceholder.typicode.com/users/\(userID)/photos")!
         var requestPhotos = URLRequest(url: urlComponents.url!)

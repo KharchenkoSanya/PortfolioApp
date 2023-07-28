@@ -165,8 +165,9 @@
 		3318F16A2A6E95FB002F9649 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3318F16D2A6E961A002F9649 /* Cell */,
+				337B64DA2A713A8100B133B8 /* PhotoCollectionViewController.swift */,
 				3318F17B2A6EC371002F9649 /* PhotosComposer.swift */,
+				3318F16D2A6E961A002F9649 /* Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,7 +191,6 @@
 		3318F16D2A6E961A002F9649 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				337B64DA2A713A8100B133B8 /* PhotoCollectionViewController.swift */,
 				3318F17D2A6ECB78002F9649 /* PhotoCollectionViewCell */,
 			);
 			path = Cell;

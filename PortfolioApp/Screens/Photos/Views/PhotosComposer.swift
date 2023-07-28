@@ -6,7 +6,7 @@ final class PhotosComposer {
     
     static func build(userID: Int) -> UIViewController {
         let photosViewModel = PhotosViewModel(userID: userID)
-        let photosTableViewController = PhotoCollectionViewController(viewModel: photosViewModel)
-        return photosTableViewController
+        let photosCollectionViewController = PhotoCollectionViewController(viewModel: photosViewModel)
+        return photosCollectionViewController
     }
 }
