@@ -3,6 +3,15 @@ import UIKit
 final class UsersTableViewController: UITableViewController {
     private var modelUsers: [UserData] = []
     private var usersViewModel: UsersViewModel
+    private var filteredUsers = [UserData]()
+    private var searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        searchController.isActive && !searchBarIsEmpty
+    }
     
     init(usersViewModel: UsersViewModel) {
         self.usersViewModel = usersViewModel
@@ -18,6 +27,13 @@ final class UsersTableViewController: UITableViewController {
         configureTableView()
         bindToViewModel()
         loadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.searchResultsUpdater = self
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
     }
     
     @objc
@@ -45,12 +61,22 @@ final class UsersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredUsers.count
+        }
         return modelUsers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let user = modelUsers[indexPath.row]
+        var user = modelUsers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: UsersTableViewCell.identifier, for: indexPath) as! UsersTableViewCell
+        
+        if isFiltering {
+            user = filteredUsers[indexPath.row]
+        } else {
+            user = modelUsers[indexPath.row]
+        }
+        
         cell.setup(user: user)
         cell.onPostButtonTap = { [weak self] in
             guard let self else { return }
@@ -78,7 +104,6 @@ final class UsersTableViewController: UITableViewController {
     }
     
     private func configureTableView() {
-        title = "User.title".localized
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
         tableView.refreshControl = refresh
@@ -87,3 +112,18 @@ final class UsersTableViewController: UITableViewController {
         tableView.register(.init(nibName: UsersTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: UsersTableViewCell.identifier)
     }
 }
+
+extension UsersTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredUsers = modelUsers.filter({ (userData: UserData) -> Bool in
+            userData.name.lowercased().contains(searchText.lowercased()) || userData.email.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+}
+
